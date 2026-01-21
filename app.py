@@ -1,8 +1,10 @@
 import streamlit as st
 from openai import OpenAI
 from dotenv import load_dotenv
-
 import os
+
+os.environ["STREAMLIT_SERVER_PORT"] = os.getenv("PORT", "8501")
+os.environ["STREAMLIT_SERVER_ADDRESS"] = "0.0.0.0"
 
 # Load environment variables
 load_dotenv()
@@ -84,4 +86,5 @@ if prompt:
 
 
     )
+
 
